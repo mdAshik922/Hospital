@@ -1,0 +1,50 @@
+[
+    {
+      "id": 0,
+      "picture": "https://i.ibb.co/z2pLRN6/Skin.png",
+      "name": "Skin care",
+      "about": "People say that beauty’s only skin deep; it’s what’s on the “inside” that counts. Our insides are certainly important, but skin is your first layer of defense against the outside world. Skin can also give important clues to your overall health. Learn to take good care of your skin, so your skin can keep taking good care of you.\r\n"
+    },
+    {
+      "id": 1,
+      "picture": "https://i.ibb.co/jJzqmCj/Backbon.png",
+      "name": "Mable Castaneda",
+      "about": "Learn about how the narrowing of the bony openings in your spine due to stenosis can cause symptoms and signs in your arms and legs, and when these symptoms may indicate a medical emergency.\r\n"
+    },
+    {
+      "id": 2,
+      "picture": "https://i.ibb.co/8rVD5BQ/Dental.png",
+      "name": "Dental",
+      "about": "Dental or oral health is concerned with your teeth, gums and mouth. The goal is to prevent complications such as tooth decay (cavities) and gum disease and to maintain the overall health of your mouth.\r\n"
+    },
+    {
+      "id": 3,
+      "picture": "https://i.ibb.co/sb7yKVR/Ear.png",
+      "name": "Ear",
+      "about": "The first step toward a healthy ear is a clean ear. Do not mistake a clean ear for a wax-free ear. Your ear is designed to have some wax in it. This wax stops dust and other possibly harmful things from entering your ear.\r\n"
+    },
+    {
+      "id": 4,
+      "picture": "https://i.ibb.co/KsFMRSn/eye.png",
+      "name": "Eye",
+      "about": "Keep in mind that healthy habits like eating well and being active can lower your risk for diseases and conditions that can lead to eye or vision problems, like diabetes or high blood pressure.\r\n"
+    },
+    {
+      "id": 5,
+      "picture": "https://i.ibb.co/QCWcD3Y/Hearth.png",
+      "name": "Heart",
+      "about": "You might not give it much thought throughout the day, but your heart is working around the clock for you. Your heart is the most important muscle in your body because it pumps blood and oxygen to all of your organs.\r\n"
+    },
+    {
+      "id": 6,
+      "picture": "https://i.ibb.co/S3zcyqY/Meditation.png",
+      "name": "Meditation",
+      "about": "Meditation is a simple practice available to all, which can reduce stress, increase calmness and clarity and promote happiness. Learning how to meditate is straightforward, and the benefits can come quickly. Here, we offer basic tips to get you started on a path toward greater equanimity, acceptance and joy. Take a deep breath, and get ready to relax.\r\n"
+    },
+    {
+      "id": 7,
+      "picture": "https://i.ibb.co/8MxMQh5/Kedny.png",
+      "name": "Kidney",
+      "about": "The kidneys are two reddish-brown bean-shaped organs found in vertebrates. They are located on the left and right in the retroperitoneal space, and in adult humans are about 12 centimetres (4+1⁄2 inches) in length.[1][2] \r\n"
+    }
+  ]
