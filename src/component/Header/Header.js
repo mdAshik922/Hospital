@@ -11,7 +11,9 @@ const {user, logout} = UseFirebase();
         <div>
              <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
+  <h6 style={{color: 'white'}}>Hospital</h6>
   <Navbar.Brand href="#home"><img width="35px" hight="35px" src={Icon} alt="icon"/></Navbar.Brand>
+ 
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -30,7 +32,9 @@ const {user, logout} = UseFirebase();
     <Nav>
   
        <Navbar.Text>
-        Signed in as: {user.displayName} 
+        Signed in as:{user.displayName} 
+        <br/>
+        <img style={{borderRadius: '50px', width: '35px'}} src={user.photoURL} alt="user"/>
       </Navbar.Text>
     </Nav>
   </Navbar.Collapse>
