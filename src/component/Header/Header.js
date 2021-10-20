@@ -1,7 +1,6 @@
 import React from 'react';
 import Icon from './cropped-favicon.png';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-
 import { NavLink } from 'react-router-dom';
 import UseFirebase from '../../Hooks/UseFirebase';
 
@@ -27,14 +26,14 @@ const {user, logout} = UseFirebase();
                <button onClick={logout} style={{color: 'white'}}>Log Out</button>
                : 
                <Nav.Link as={NavLink} style={{color: 'white'}} to="/login">Login</Nav.Link>
-               }
+          }
     </Nav>
     <Nav>
-  
-       <Navbar.Text>
+      {/* display your name and photo */}
+   <Navbar.Text>
         Signed in as:{user.displayName} 
         <br/>
-        <img style={{borderRadius: '50px', width: '35px'}} src={user.photoURL} alt="user"/>
+        <img style={{borderRadius: '50px', width: '35px'}} src={user.photoURL} alt=""/>
       </Navbar.Text>
     </Nav>
   </Navbar.Collapse>

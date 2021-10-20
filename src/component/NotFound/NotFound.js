@@ -7,7 +7,7 @@ const NotFound = () => {
             <div>
         <img width="50%" height="50%" src={error} alt="page-error"/>
               <Link to="/home">
-              <button style={{backgroundColor: "red", marginLeft: "20px"}} >
+              <button style={{backgroundColor: "red", width: '35%'}} >
                   <strong>Go-Back</strong></button>
               </Link>
             </div>

@@ -31,12 +31,11 @@ const SignUp = () => {
 
     <button type="submit" className="registerbtn">Register</button>
   </div>
-  
- 
-
 </form>
-<button onClick={singinWithGoogle}><img witdth="20px" height="20px" src={Google} alt="google" />Google Sign-Up</button>
-            </div>
+
+<button onClick={singinWithGoogle}><img witdth="25px" height="25px" style={{borderRadius: '35px'}} src={Google} alt="google" />Google Sign-Up</button>
+         </div>
+           
             <div className="container signin">
     <p>Already have an account? <Link to="/login">Sign in</Link>.</p>
   </div>

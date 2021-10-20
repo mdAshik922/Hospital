@@ -17,7 +17,7 @@ const Login = () => {
 <from method="post" onSubmit={fromLogin}>
   
 
-  <div class="container">
+  <div className="container">
     <label htmlFor="uname"><b>Email:</b></label>
     <input type="text" placeholder="Enter Email" name="email" required/>
 <br/><br/>
@@ -30,11 +30,11 @@ const Login = () => {
     </label>
   </div>
   <br/><br/>
-  <div class="container" style={{backgroundColor:'#f1f1f1'}}>
+  <div className="container" style={{backgroundColor:'#f1f1f1'}}>
     <button style={{margin: '5px'}} type="button" className="cancelbtn">Cancel</button>
     <span className="psw"><Link to="#"> Forgot-password?</Link></span>
   </div>
-  <button onClick={singinWithGoogle}><img witdth="20px" height="20px" src={Google} alt="google" />Google Sign</button>
+  <button onClick={singinWithGoogle}><img witdth="25px" height="25px"  style={{borderRadius: '35px'}} src={Google} alt="google" />Google Sign</button>
 </from>
 {/* account create */}
             </div>

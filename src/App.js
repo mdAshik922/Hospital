@@ -13,6 +13,7 @@ import Support from './component/Support/Support';
 import PrivateRoute from './component/Route/PrivateRoute';
 import AuthProvider from './component/Contex/AuthProvider';
 import Appointment from './component/Appointment/Appointment';
+import ServiceDetail from './component/ServiceDetails/ServiceDetail';
 function App() {
   return (
     <div className="App">
@@ -21,7 +22,6 @@ function App() {
      <Router>
        <Header></Header>
      <Switch>
-
 <Route exact path='/'>
 <Home></Home>
 </Route>
@@ -43,11 +43,12 @@ function App() {
 <Route  path='/login'>
 <Login></Login>
 </Route>
+<Route  path='/servicecart/:serviceId'>
+<ServiceDetail></ServiceDetail>
+</Route>
 <Route  path='/signup'>
 <SignUp></SignUp>
 </Route>
-
-
 <Route  path='*'>
 <NotFound></NotFound>
 </Route>
