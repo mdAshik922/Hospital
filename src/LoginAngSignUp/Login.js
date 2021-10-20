@@ -2,31 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import Google from'./google.png'
-
-import UseFirebase from '../Hooks/UseFirebase';
+import UseAuth from '../Hooks/UseAuth';
+import { Form } from 'react-bootstrap';
 
 // login page
 const Login = () => {
-    const {singinWithGoogle, fromLogin}= UseFirebase();
+    const {singinWithGoogle, fromLogin}= UseAuth();
   
     return (
         <div>
             <div >
-            <h2>Login Form</h2>
+            <h2>Login form</h2>
 
-<from method="post" onSubmit={fromLogin}>
+<Form method="post" onSubmit={fromLogin}>
   
 
   <div className="container">
     <label htmlFor="uname"><b>Email:</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required/>
+    <input  
+    type="text" placeholder="Enter Email" name="email" required/>
 <br/><br/>
     <label htmlFor="psw"><b>Password:</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required/>
+    <input 
+   type="password" placeholder="Enter Password" name="psw" required/>
     <br/><br/>
     <button style={{margin: '5px'}} type="submit">Login</button>
     <label><br/><br/>
-      <input type="checkbox" checked="checked" name="remember"/> Remember me
+      <input 
+  
+    type="checkbox"  name="remember"/> Remember me
     </label>
   </div>
   <br/><br/>
@@ -35,7 +39,7 @@ const Login = () => {
     <span className="psw"><Link to="#"> Forgot-password?</Link></span>
   </div>
   <button onClick={singinWithGoogle}><img witdth="25px" height="25px"  style={{borderRadius: '35px'}} src={Google} alt="google" />Google Sign</button>
-</from>
+</Form>
 {/* account create */}
             </div>
             <p>Create new <Link to="/signup">account</Link></p>

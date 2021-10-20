@@ -1,18 +1,17 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
-import UseFirebase from '../Hooks/UseFirebase';
-
 
 import Google from './google.png';
 const SignUp = () => {
-    const {singinWithGoogle, signUpFrom}= UseFirebase();
+    const {singinWithGoogle, signUpFrom} = UseAuth();
 
 // Register page
     return (
         <div>
             <div>
-            <form onSubmit={signUpFrom}>
+            <Form onSubmit={signUpFrom}>
   <div className="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -31,7 +30,7 @@ const SignUp = () => {
 
     <button type="submit" className="registerbtn">Register</button>
   </div>
-</form>
+</Form>
 
 <button onClick={singinWithGoogle}><img witdth="25px" height="25px" style={{borderRadius: '35px'}} src={Google} alt="google" />Google Sign-Up</button>
          </div>
