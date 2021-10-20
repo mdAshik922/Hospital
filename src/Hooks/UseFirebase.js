@@ -1,19 +1,24 @@
 
 import { useEffect, useState } from "react"
-import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword    } from "firebase/auth";
+import { getAuth, onAuthStateChanged, sendPasswordResetEmail, sendEmailVerification, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword    } from "firebase/auth";
 import initilazition from '../component/Firebase/Firebase.init';
+
 initilazition();
+
 const UseFirebase = () => {
     const [user, setUser] = useState({})
     const [email, setEmail] = useState('');
+    const [isLogin, setIsLogin] = useState(false);
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
+
     const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
+
     const singinWithGoogle = ()=>{
 signInWithPopup(auth, googleProvider)
 .then(result => {
-    console.log(result.user)
+     // error handel ..
     setUser(result.user)
 })
 .catch(error =>{
@@ -26,42 +31,71 @@ const logout = () =>{
         setUser({});
     })
 }
-const handleEmai= ()=>{
-    setEmail(email);
+const handleEmai= (e)=>{
+    setEmail(e.target.value);
 }
 
-const handlePassword = () =>{
-    setPassword(password);
+const handlePassword = (e) =>{
+    setPassword(e.target.value);
 }
-const signUpFrom =(e) =>{
+const hendelRegistration= e =>{
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+   
+    if(password.length < 6){
+      setError('password must be 6 character long.');
+      return;
+    }
+      if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
+        setError('password must 2 upper case')
+        return;
+      }
+      if(isLogin){
+        prosseceLogin(email, password);
+  
+      }
+      else{
+        registerNewUser(email, password);
+      }
+    }
+   
+  const prosseceLogin = (e, email, password) => {
+    e.preventDefault();
+    signInWithEmailAndPassword (auth, email, password)
     .then(result => {
-      // Signed in 
       const user = result.user;
-      // ...
+       // error handel..
       setError('');
     })
-    .catch((error) => {
-        setError(error.message);
-      // ..
-    });
-
-}
-
-const fromLogin =(e)=>{
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-  .then(result => {
-    // Signed in 
-    const user = result.user;
-    // ...
-    setError('')
-  })
-  .catch((error) => {
-   setError(error.message);
-  });
-}
+    .catch(error =>{
+      setError(error.message)
+    })
+  }
+  const registerNewUser = (e, email, password) =>{
+      e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(result =>{
+      // error handel
+      const user = result.user;
+      console.log(user);
+      setError('')
+      veryfyEmail();
+    })
+    .catch(error => {
+      setError(error.message)
+    })
+  }
+  
+  const veryfyEmail = () => {
+    sendEmailVerification(auth.currentUser)
+    .then(result => {
+  console.log(result);
+    })
+  }
+  
+  const resetpassword = () => {
+    sendPasswordResetEmail (auth, email)
+    .then(result => { })
+  }
 
 useEffect(() =>{
     onAuthStateChanged(auth, user=>{
@@ -78,8 +112,8 @@ useEffect(() =>{
         singinWithGoogle,
         handlePassword,
         handleEmai,
-        signUpFrom,
-        fromLogin,
+        hendelRegistration,
+        resetpassword,
 logout
     }
 }

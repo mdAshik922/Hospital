@@ -5,23 +5,23 @@ import UseAuth from '../Hooks/UseAuth';
 
 import Google from './google.png';
 const SignUp = () => {
-    const {singinWithGoogle, signUpFrom} = UseAuth();
+    const {singinWithGoogle, hendelChangeEmail, hendelChangePassword, hendelRegistration} = UseAuth();
 
 // Register page
     return (
         <div>
             <div>
-            <Form onSubmit={signUpFrom}>
+            <Form onSubmit={hendelRegistration}>
   <div className="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <br/>
 
     <label htmlFor="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required/>
+    <input type="text" onBlur={hendelChangeEmail} placeholder="Enter Email" name="email" id="email" required/>
 
     <label htmlFor="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required/>
+    <input type="password" onBlur={hendelChangePassword} placeholder="Enter Password" name="psw" id="psw" required/>
 
     <label htmlFor="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required/>
