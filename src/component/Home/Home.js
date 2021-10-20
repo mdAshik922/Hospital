@@ -21,7 +21,7 @@ const Home = () => {
             <Carousel variant="dark">
   
   <Carousel.Item>
-    <img
+    <img height= "500px"
       className="d-block w-100"
       src={happyDoctor}
       alt="Second slide"
@@ -34,7 +34,7 @@ const Home = () => {
   </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
-    <img
+    <img height= "500px"
       className="d-block w-100"
       src={thankDoctor}
       alt="Third slide"
