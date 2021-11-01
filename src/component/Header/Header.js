@@ -2,10 +2,11 @@ import React from 'react';
 import Icon from './cropped-favicon.png';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import UseFirebase from '../../Hooks/UseFirebase';
+import UseAuth from '../../Hooks/UseAuth';
+
 
 const Header = () => {
-const {user, logout} = UseFirebase();
+const {user, logOut} = UseAuth();
     return (
         <div>
              <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -23,7 +24,7 @@ const {user, logout} = UseFirebase();
       <Nav.Link as={NavLink} to="/appointment#appointment">Appointment</Nav.Link>
      
       { user.displayName?
-               <button onClick={logout} style={{color: 'white'}}>Log Out</button>
+               <button onClick={logOut} style={{color: 'white'}}>Log Out</button>
                : 
                <Nav.Link as={NavLink} style={{color: 'white'}} to="/login">Login</Nav.Link>
           }

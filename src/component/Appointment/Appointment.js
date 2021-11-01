@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Medical from './appointment.png' ;
+
+
 const Appointment = () => {
+
     return (
-        <div>
-            <h2>Appointment</h2>
-        </div>
+<div>
+<img src={Medical} alt="medical appoinment"/>
+</div>
     );
 };
 

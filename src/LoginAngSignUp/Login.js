@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import './Login.css';
 import Google from'./google.png'
 import UseAuth from '../Hooks/UseAuth';
@@ -7,14 +7,71 @@ import { Form } from 'react-bootstrap';
 
 // login page
 const Login = () => {
-    const {singinWithGoogle, hendelChangeEmail, hendelChangePassword, resetpassword, hendelRegistration}= UseAuth();
+  const { signInWithGoogle,setUser ,loginWithEmailAndPassword, setIsLoading} = UseAuth();
+
+  const history= useHistory()
+  const location = useLocation()
   
+  const url= location.state?.from || "/home"
+  
+  const [email , setEmail]= useState("")
+  const [password , setPassword] = useState("")
+  
+  
+  const hendelChangeEmail = (e) =>{
+    setEmail(e.target.value);
+  }
+  
+  const hendelChangePassword = (e)=> {
+      setPassword(e.target.value);
+  }
+  
+  
+  
+  
+  const hendelLogin=(e)=>{
+      e.preventDefault();
+  
+      loginWithEmailAndPassword(email,password)
+      .then((res) => {
+        setIsLoading(true)
+          setUser(res.user);
+          history.push(url)
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        })
+        .finally(() => {
+          setIsLoading(false)
+        })
+  }
+  
+  
+  
+  
+  
+    const GoogleLogin = () => {
+      signInWithGoogle()
+        .then((res) => 
+          {
+            setIsLoading(true)
+            setUser(res.user)
+            history.push(url)
+          }
+            )
+        .catch((err) => console.log(err))
+        .finally(() => {
+          setIsLoading(false)
+        })
+    };
     return (
         <div>
             <div >
             <h2>Login form</h2>
 
-<Form method="post" onSubmit={hendelRegistration}>
+<Form  onSubmit={hendelLogin}>
   
 
   <div className="container">
@@ -36,9 +93,9 @@ const Login = () => {
   <br/><br/>
   <div className="container" style={{backgroundColor:'#f1f1f1'}}>
     <button style={{margin: '5px'}} type="button" className="cancelbtn">Cancel</button>
-    <button onClick={resetpassword} className="psw"> Forgot-password?</button>
+    <button  className="psw"> Forgot-password?</button>
   </div>
-  <button onClick={singinWithGoogle}><img witdth="25px" height="25px"  style={{borderRadius: '35px'}} src={Google} alt="google" />Google Sign</button>
+  <button onClick={GoogleLogin}><img witdth="25px" height="25px"  style={{borderRadius: '35px'}} src={Google} alt="google" />Google Sign</button>
 </Form>
 {/* account create */}
             </div>
