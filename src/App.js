@@ -11,7 +11,7 @@ import SignUp from './LoginAngSignUp/SignUp';
 import Blog from './component/Blog/Blog';
 import Support from './component/Support/Support';
 import PrivateRoute from './component/Route/PrivateRoute';
-import AuthProvider from './component/Contex/AuthProvider';
+import AuthProvider from './component/Context/AuthProvider';
 import Appointment from './component/Appointment/Appointment';
 import ServiceDetail from './component/ServiceDetails/ServiceDetail';
 
@@ -31,20 +31,17 @@ function App() {
 
 <Route  path='/service' element={<Home></Home>} />
 
+<Route  path='/support' element={<Support></Support>} />
+
+<Route  path='/service' element={<Service></Service>} />
+
+<Route  path='/servicecart/:serviceId' element={<ServiceDetail></ServiceDetail>} />
+
+<Route  path='/appointment' element={<PrivateRoute><Appointment/></PrivateRoute>} />
 
 <Route  path='/blog' element={<PrivateRoute><Blog/></PrivateRoute>} />
 
-
-<Route  path='/support' element={<Support></Support>} />
-
-<PrivateRoute  path='/appointment' element={<PrivateRoute><Appointment/></PrivateRoute>} />
-
-
-<Route  path='/login'>
-<Login></Login>
-</Route>
-<Route  path='/servicecart/:serviceId' element={<ServiceDetail></ServiceDetail>} />
-
+<Route  path='/login'  element={<Login></Login>} />
 
 <Route  path='/signup' element={<SignUp></SignUp>} />
 
