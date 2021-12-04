@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { Link, usenavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
 
 import Google from './google.png';
@@ -8,29 +8,26 @@ const SignUp = () => {
 
   const { signInWithGoogle, createAccountWithGoogle,setUser , setIsLoading , updateName } = UseAuth();
 
-  const navigate= usenavigate()
-  const location = useLocation()
+  const navigate= useNavigate();
+  const location = useLocation();
   const url= location.state?.from || "/home"
 
-const [name , setName] =useState('')
-const [email,setEmail]=useState('')
-const [password,setPassword]=useState('')
+const [name , setName] =useState('');
+const [email,setEmail]=useState('');
+const [password,setPassword]=useState('');
 
 
 const handleGetName=(e)=> {
-  console.log(e.target.value);
- setName(e.target.value)
-}
+ setName(e.target.value);
+};
 
 const handleGetEmail=(e)=> {
-  console.log(e.target.value);
- setEmail(e.target.value)
-}
+ setEmail(e.target.value);
+};
 
 const handleGetPassword=(e)=> {
-  console.log(e.target.value);
  setPassword(e.target.value)
-}
+};
 
 
 
