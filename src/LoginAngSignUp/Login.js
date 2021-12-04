@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Login.css';
 import Google from'./google.png'
 import UseAuth from '../Hooks/UseAuth';
@@ -9,7 +9,7 @@ import { Form } from 'react-bootstrap';
 const Login = () => {
   const { signInWithGoogle,setUser ,loginWithEmailAndPassword, setIsLoading} = UseAuth();
 
-  const history= useHistory()
+  const navigate= useNavigate()
   const location = useLocation()
   
   const url= location.state?.from || "/home"
@@ -18,25 +18,23 @@ const Login = () => {
   const [password , setPassword] = useState("")
   
   
-  const hendelChangeEmail = (e) =>{
+  const handelChangeEmail = (e) =>{
     setEmail(e.target.value);
-  }
+  };
   
-  const hendelChangePassword = (e)=> {
+  const handelChangePassword = (e)=> {
       setPassword(e.target.value);
-  }
+  };
   
-  
-  
-  
-  const hendelLogin=(e)=>{
+
+  const handelLogin=(e)=>{
       e.preventDefault();
   
       loginWithEmailAndPassword(email,password)
       .then((res) => {
-        setIsLoading(true)
+        setIsLoading(true);
           setUser(res.user);
-          history.push(url)
+          navigate.push(url);
           // ...
         })
         .catch((error) => {
@@ -44,12 +42,9 @@ const Login = () => {
           const errorMessage = error.message;
         })
         .finally(() => {
-          setIsLoading(false)
-        })
-  }
-  
-  
-  
+          setIsLoading(false);
+        });
+  };
   
   
     const GoogleLogin = () => {
@@ -58,7 +53,7 @@ const Login = () => {
           {
             setIsLoading(true)
             setUser(res.user)
-            history.push(url)
+            navigate.push(url)
           }
             )
         .catch((err) => console.log(err))
@@ -71,16 +66,16 @@ const Login = () => {
             <div >
             <h2>Login form</h2>
 
-<Form  onSubmit={hendelLogin}>
+<Form  onSubmit={handelLogin}>
   
 
   <div className="container">
     <label htmlFor="uname"><b>Email:</b></label>
-    <input  onBlur={hendelChangeEmail}
+    <input  onBlur={handelChangeEmail}
     type="text" placeholder="Enter Email" name="email" required/>
 <br/><br/>
     <label htmlFor="psw"><b>Password:</b></label>
-    <input  onBlur={hendelChangePassword}
+    <input  onBlur={handelChangePassword}
    type="password" placeholder="Enter Password" name="psw" required/>
     <br/><br/>
     <button style={{margin: '5px'}} type="submit">Login</button>

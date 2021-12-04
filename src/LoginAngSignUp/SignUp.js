@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, usenavigate, useLocation } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
 
 import Google from './google.png';
@@ -8,7 +8,7 @@ const SignUp = () => {
 
   const { signInWithGoogle, createAccountWithGoogle,setUser , setIsLoading , updateName } = UseAuth();
 
-  const history= useHistory()
+  const navigate= usenavigate()
   const location = useLocation()
   const url= location.state?.from || "/home"
 
@@ -41,7 +41,7 @@ const handleRegistration=(e)=> {
     setIsLoading(true)
     updateName(name)
       setUser(res.user)
-      history.push(url)
+      navigate.push(url)
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -61,7 +61,7 @@ const handleGoogleLogin = () => {
           {
             setIsLoading(true)
             setUser(res.user)
-            history.push(url)
+            navigate.push(url)
           }
             )
         .catch((err) => console.log(err))

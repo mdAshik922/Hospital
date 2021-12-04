@@ -24,7 +24,7 @@ const UseFirebase = () => {
             setIsLoading(false)
        })
         return ()=> unsubscribe()
-  },[]);
+  },[auth]);
    
   
     const signInWithGoogle=()=> {

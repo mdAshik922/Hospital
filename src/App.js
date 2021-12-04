@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Footer from './component/Footer/Footer';
 import Header from './component/Header/Header';
@@ -14,47 +14,46 @@ import PrivateRoute from './component/Route/PrivateRoute';
 import AuthProvider from './component/Contex/AuthProvider';
 import Appointment from './component/Appointment/Appointment';
 import ServiceDetail from './component/ServiceDetails/ServiceDetail';
+
 function App() {
   return (
     <div className="App">
       {/* router use */}
       <AuthProvider>
-     <Router>
+     <BrowserRouter>
        <Header></Header>
-     <Switch>
-<Route exact path='/'>
-<Home></Home>
-</Route>
-<Route  path='/home'>
-<Home></Home>
-</Route>
-<Route  path='/service'>
-<Service></Service>
-</Route>
-<PrivateRoute  path='/blog'>
-<Blog></Blog>
-</PrivateRoute>
-<Route  path='/support'>
-<Support></Support>
-</Route>
-<PrivateRoute  path='/appointment'>
-<Appointment></Appointment>
-</PrivateRoute>
+     <Routes>
+<Route exact path='/' element={<Home></Home>} />
+
+
+<Route  path='/home' element={<Home></Home>} />
+
+
+<Route  path='/service' element={<Home></Home>} />
+
+
+<Route  path='/blog' element={<PrivateRoute><Blog/></PrivateRoute>} />
+
+
+<Route  path='/support' element={<Support></Support>} />
+
+<PrivateRoute  path='/appointment' element={<PrivateRoute><Appointment/></PrivateRoute>} />
+
+
 <Route  path='/login'>
 <Login></Login>
 </Route>
-<Route  path='/servicecart/:serviceId'>
-<ServiceDetail></ServiceDetail>
-</Route>
-<Route  path='/signup'>
-<SignUp></SignUp>
-</Route>
-<Route  path='*'>
-<NotFound></NotFound>
-</Route>
-     </Switch>
+<Route  path='/servicecart/:serviceId' element={<ServiceDetail></ServiceDetail>} />
+
+
+<Route  path='/signup' element={<SignUp></SignUp>} />
+
+<Route  path='*' element={<NotFound></NotFound>} />
+
+
+     </Routes>
      <Footer></Footer>
-     </Router>
+     </BrowserRouter>
      </AuthProvider>
     </div>
   );
