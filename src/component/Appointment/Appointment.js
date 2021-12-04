@@ -7,7 +7,7 @@ const Appointment = () => {
 
     return (
 <div>
-<img src={Medical} alt="medical appoinment"/>
+<img src={Medical} alt="medical-appointment "/>
 </div>
     );
 };
