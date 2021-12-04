@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
-
 import Google from './google.png';
+
 const SignUp = () => {
 
-  const { signInWithGoogle, createAccountWithGoogle,setUser , setIsLoading , updateName } = UseAuth();
+  const { signInWithGoogle, createAccountWithGoogle, setUser, setIsLoading, updateName } = UseAuth();
 
   const navigate= useNavigate();
   const location = useLocation();
-  const url= location.state?.from || "/home"
+  const url= location.state?.from || "/home";
 
 const [name , setName] =useState('');
 const [email,setEmail]=useState('');
@@ -30,15 +30,14 @@ const handleGetPassword=(e)=> {
 };
 
 
-
 const handleRegistration=(e)=> {
   e.preventDefault();
   createAccountWithGoogle(email,password)
   .then((res) => {
     setIsLoading(true)
-    updateName(name)
-      setUser(res.user)
-      navigate.push(url)
+    updateName(name);
+      setUser(res.user);
+      navigate.push(url);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -46,9 +45,9 @@ const handleRegistration=(e)=> {
       // ..
     })
     .finally(()=> {
-      setIsLoading(false)
-    })
-}
+      setIsLoading(false);
+    });
+};
 
 
   
@@ -56,15 +55,15 @@ const handleGoogleLogin = () => {
       signInWithGoogle()
         .then((res) => 
           {
-            setIsLoading(true)
-            setUser(res.user)
-            navigate.push(url)
+            setIsLoading(true);
+            setUser(res.user);
+            navigate.push(url);
           }
             )
         .catch((err) => console.log(err))
         .finally(() => {
-          setIsLoading(false)
-        })
+          setIsLoading(false);
+        });
     };
 
 // Register page
