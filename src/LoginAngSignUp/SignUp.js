@@ -12,9 +12,9 @@ const SignUp = () => {
   const location = useLocation();
   const url= location.state?.from || "/home";
 
-const [name , setName] =useState('');
-const [email,setEmail]=useState('');
-const [password,setPassword]=useState('');
+const [name , setName] = useState('');
+const [email,setEmail] = useState('');
+const [password,setPassword] = useState('');
 
 
 const handleGetName=(e)=> {
