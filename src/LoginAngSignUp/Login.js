@@ -34,7 +34,7 @@ const Login = () => {
       .then((res) => {
         setIsLoading(true);
           setUser(res.user);
-          navigate.push(url);
+          navigate(url);
           // ...
         })
         .catch((error) => {
@@ -53,7 +53,7 @@ const Login = () => {
           {
             setIsLoading(true)
             setUser(res.user)
-            navigate.push(url)
+            navigate(url)
           }
             )
         .catch((err) => console.log(err))
