@@ -7,7 +7,7 @@ import { Form } from 'react-bootstrap';
 
 // login page
 const Login = () => {
-  const { signInWithGoogle, setUser ,loginWithEmailAndPassword, setIsLoading} = UseAuth();
+  const { signInWithGoogle, setUser, loginWithEmailAndPassword, setIsLoading} = UseAuth();
 
   const navigate= useNavigate()
   const location = useLocation()
