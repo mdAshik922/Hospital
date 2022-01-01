@@ -8,9 +8,9 @@ const SignUp = () => {
 
   const { signInWithGoogle, createAccountWithGoogle, setUser, setIsLoading, updateName } = UseAuth();
 
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
-  const url= location.state?.from || "/home";
+  const url = location?.state?.from || '/';
 
 const [name , setName] = useState('');
 const [email,setEmail] = useState('');
@@ -37,7 +37,7 @@ const handleRegistration=(e)=> {
     setIsLoading(true)
     updateName(name);
       setUser(res.user);
-      navigate.push(url);
+      navigate(url);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -57,7 +57,7 @@ const handleGoogleLogin = () => {
           {
             setIsLoading(true);
             setUser(res.user);
-            navigate.push(url);
+            navigate(url);
           }
             )
         .catch((err) => console.log(err))
