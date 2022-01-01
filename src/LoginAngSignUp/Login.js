@@ -12,7 +12,7 @@ const Login = () => {
   const navigate= useNavigate()
   const location = useLocation()
   
-  const url= location.state?.from || "/"
+  const url= location?.state?.from || '/';
   
   const [email , setEmail]= useState("")
   const [password , setPassword] = useState("")
