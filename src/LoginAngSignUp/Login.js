@@ -39,7 +39,7 @@ const Login = () => {
         })
         .catch((error) => {
           
-          const errorMessage = error.message;
+          
         })
         .finally(() => {
           setIsLoading(false);
