@@ -2,4 +2,32 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+};
+
+/* .doctor:hover{
+    background-color: aquamarine;
+    transform: translateY(20%);
+}; */
+
+.image-card{
+    position: relative;
+    overflow: hidden;
+}
+.image-card .doctor{
+   
+    object-fit: cover;
+}
+.image-card::before{
+    content: '';
+    width:'35%';
+    background-color: #9bdc28;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .8;
+    transform: translateY(-100%);
+    transition: .5s;
+}
+.image-card:hover::before{
+    transform: translateY(0);
 }
