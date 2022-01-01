@@ -7,14 +7,14 @@ initilazition();
 
 const UseFirebase = () => {
   const [user , setUser]=useState({});
-  const [isLoading , setIsLoading] =useState(true);
+  const [isLoading , setIsLoading] = useState(true);
    const auth = getAuth();
     const googleProvider= new GoogleAuthProvider();
   
   
   useEffect(() =>{
        const unsubscribe = onAuthStateChanged(auth , (user)=> {
-          // console.log(user);
+          
             if(user){
                  
                 setUser(user)
@@ -27,56 +27,56 @@ const UseFirebase = () => {
   },[auth]);
    
   
-    const signInWithGoogle=()=> {
-     return  signInWithPopup(auth, googleProvider)
-   
-    };
+  const signInWithGoogle=()=> {
+    return  signInWithPopup(auth, googleProvider)
   
-  
-  const  createAccountWithGoogle =(email , password)=> {
-  
-      return createUserWithEmailAndPassword(auth, email, password)
-  };
-  
-  
-  const loginWithEmailAndPassword =(email,password)=> {
-      return signInWithEmailAndPassword(auth, email, password)
-  };
+   }
+ 
+ 
+ const  createAccountWithGoogle =(email , password)=> {
+ 
+     return createUserWithEmailAndPassword(auth, email, password)
+ }
+ 
+ 
+ const loginWithEmailAndPassword =(email,password)=> {
+     return signInWithEmailAndPassword(auth, email, password)
+ }
+     
+ 
+ const updateName= (name)=> {
+   updateProfile(auth.currentUser, {
+     displayName: name
+   }).then(() => {
+     const newUser={...user, displayName: name} // recommend
+    setUser(newUser)
+     
+     // ...
+   }).catch((error) => {
+     // An error occurred
+     // ...
+   });
+ }
+ 
+  const logOut=()=> {
       
-  
-  const updateName= (name)=> {
-    updateProfile(auth.currentUser, {
-      displayName: name
-    }).then(() => {
-      const newUser={...user, displayName: name} // recommend
-     setUser(newUser)
-      
-      // ...
-    }).catch((error) => {
-      // An error occurred
-      // ...
-    });
-  };
-  
-   const logOut=()=> {
-      
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    });
-   };
-  
-      return {
-         user,setUser,
-         signInWithGoogle,
-         createAccountWithGoogle,
-         loginWithEmailAndPassword,
-         isLoading,
-         setIsLoading,
-         logOut,
-         updateName
-         
-      }
-}
+     signOut(auth).then(() => {
+         setUser({})
+       }).catch((error) => {
+         // An error happened.
+       });
+  }
+ 
+     return {
+        user,setUser,
+        signInWithGoogle,
+        createAccountWithGoogle,
+        loginWithEmailAndPassword,
+        isLoading,
+        setIsLoading,
+        logOut,
+        updateName
+        
+     }
+ }
 export default UseFirebase;
