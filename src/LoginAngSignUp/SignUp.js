@@ -40,9 +40,7 @@ const handleRegistration=(e)=> {
       navigate(url);
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
+     
     })
     .finally(()=> {
       setIsLoading(false);
