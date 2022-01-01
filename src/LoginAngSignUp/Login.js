@@ -14,7 +14,7 @@ const Login = () => {
   
   const url= location?.state?.from || '/';
   
-  const [email , setEmail]= useState("")
+  const [email , setEmail]= useState("");
   const [password , setPassword] = useState("")
   
   
