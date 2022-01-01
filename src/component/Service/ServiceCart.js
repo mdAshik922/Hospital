@@ -6,10 +6,11 @@ const ServiceCart = ({service}) => {
    
     const {id, name, picture, about} = service || {};
     const url = `/servicecart/${id}`;
+    
     return (
         <div>
             <div className="container-style" >
-           <img className="img-style" src={picture} alt="pictures"/>
+           <img className="img-style" src={picture} alt="service"/>
            <Fade left>
            <h2>Name:{name}</h2>
            </Fade>

@@ -18,7 +18,7 @@ const {user, logOut} = UseAuth();
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
       <Nav.Link as={NavLink} to="/home#home">Home</Nav.Link>
-      <Nav.Link as={NavLink} to="/Service#Service">Service</Nav.Link>
+      <Nav.Link as={NavLink} to="/service#Service">Service</Nav.Link>
       <Nav.Link as={NavLink} to="/blog#blog">Blog</Nav.Link>
       <Nav.Link as={NavLink} to="/support#support">Support</Nav.Link>
       <Nav.Link as={NavLink} to="/appointment#appointment">Appointment</Nav.Link>
