@@ -20,11 +20,10 @@ const ServiceDetail = () => {
     return (
         <div>
             <h2>Please Order now{id}</h2>
-             <div  >
-             
-           <p>Name: {specificDetail?.about}</p>
-           <p>price: {specificDetail?.price}</p>
-             
+             <div>
+           <p>Name: {specificDetail?.name}</p>
+           <img className="img-style" src={specificDetail?.picture} alt="service"/>
+           <p> {specificDetail?.about}</p>
             </div>
         </div>
     );
