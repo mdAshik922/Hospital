@@ -13,8 +13,6 @@ const ServiceDetail = () => {
     setSpecificDetail(matchedData);})
     ,[]);
   
-
-
     return (
         <div style={{marginBottom: "15%"}}>
              <div>
