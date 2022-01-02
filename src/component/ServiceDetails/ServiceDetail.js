@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 const ServiceDetail = () => { 
     const {id} = useParams()
     
-    const [specificDetail, setSpecificDetail] = useState({})
+    const [specificDetail, setSpecificDetail] = useState({});
 
 
   useEffect(() =>
