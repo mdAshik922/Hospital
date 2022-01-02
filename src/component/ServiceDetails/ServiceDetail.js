@@ -8,7 +8,7 @@ const ServiceDetail = () => {
 
 
   useEffect(() =>
-  fetch("/FackData.json")
+  fetch("/FakeData.json")
   .then(res => res.json())
   .then(data=>{
     const matchedData= data.find(detail=> detail.id==id)
@@ -20,7 +20,7 @@ const ServiceDetail = () => {
         <div>
              <div>
            <p>Name: {specificDetail?.name}</p>
-           <img className="img-style" src={specificDetail?.picture} alt="service"/>
+           <img  src={specificDetail?.picture} alt="service"/>
            <p> {specificDetail?.about}</p>
             </div>
         </div>
