@@ -31,7 +31,7 @@ function App() {
 
 <Route  path='/service' element={<Service></Service>} />
 
-<Route  path='/servicecart/:Id' element={<ServiceDetail></ServiceDetail>} />
+<Route  path='/ServiceDetail/:id' element={<ServiceDetail></ServiceDetail>} />
 
 <Route  path='/appointment' element={<PrivateRoute><Appointment/></PrivateRoute>} />
 

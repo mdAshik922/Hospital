@@ -5,7 +5,7 @@ import './ServiceCart.css';
 const ServiceCart = ({service}) => {
    
     const {id, name, picture, about} = service || {};
-    const url = `/servicecart/${id}`;
+    
     
     return (
         <div>
@@ -15,7 +15,7 @@ const ServiceCart = ({service}) => {
            <h2>Name:{name}</h2>
            </Fade>
            
-            <p><strong>{about.slice(0, 112)}<Link to={url}>Learn-more</Link></strong></p>
+            <p><strong>{about.slice(0, 112)}<Link to={`/ServiceDetail/${id}`}>Learn-more</Link></strong></p>
             </div>
         </div>
     );
