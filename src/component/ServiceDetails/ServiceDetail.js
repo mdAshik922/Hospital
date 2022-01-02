@@ -15,11 +15,10 @@ const ServiceDetail = () => {
     const matchedData= data.find(detail=> detail.id==id)
     setSpecificDetail(matchedData);
   })
-,[])
+,[]);
 
     return (
         <div>
-            <h2>Please Order now{id}</h2>
              <div>
            <p>Name: {specificDetail?.name}</p>
            <img className="img-style" src={specificDetail?.picture} alt="service"/>
