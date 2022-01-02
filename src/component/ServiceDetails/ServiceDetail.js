@@ -3,9 +3,7 @@ import {useParams} from "react-router-dom";
 
 const ServiceDetail = () => { 
     const {id} = useParams();
-    
     const [specificDetail, setSpecificDetail] = useState({});
-
 
   useEffect(() =>
   fetch("/FakeData.json")
@@ -20,7 +18,7 @@ const ServiceDetail = () => {
         <div>
              <div>
            <p>Name: {specificDetail?.name}</p>
-           <img  src={specificDetail?.picture} alt="service"/>
+           <img src={specificDetail?.picture} alt="service"/>
            <p> {specificDetail?.about}</p>
             </div>
         </div>
