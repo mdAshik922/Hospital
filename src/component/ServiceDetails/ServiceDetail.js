@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from "react-router-dom";
-import Fade from 'react-reveal/Fade';
 
 const ServiceDetail = () => { 
     const {id} = useParams();
