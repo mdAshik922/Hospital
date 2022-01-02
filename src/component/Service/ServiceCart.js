@@ -10,7 +10,7 @@ const ServiceCart = ({service}) => {
     return (
         <div>
             <div className="container-style" >
-           <img className="img-style" src={picture} alt="service"/>
+           <img className="img-style" src={picture} alt="health"/>
            <Fade left>
            <h2>Name:{name}</h2>
            </Fade>
