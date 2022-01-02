@@ -17,7 +17,7 @@ const ServiceDetail = () => {
         <div style={{marginBottom: "15%"}}>
              <div>
            <p>Name: {specificDetail?.name}</p>
-           <img src={specificDetail?.picture} alt=""/>
+           <img src={specificDetail?.picture} alt="health"/>
            <p> {specificDetail?.about}</p>
             </div>
         </div>
