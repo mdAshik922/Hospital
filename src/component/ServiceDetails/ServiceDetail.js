@@ -15,7 +15,7 @@ const ServiceDetail = () => {
 ,[]);
 
     return (
-        <div>
+        <div style={{}}>
              <div>
            <p>Name: {specificDetail?.name}</p>
            <img src={specificDetail?.picture} alt="service"/>
