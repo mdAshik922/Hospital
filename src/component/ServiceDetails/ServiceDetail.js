@@ -10,9 +10,9 @@ const ServiceDetail = () => {
   .then(res => res.json())
   .then(data=>{
     const matchedData= data.find(detail=> detail.id==id)
-    setSpecificDetail(matchedData);
-  })
-,[]);
+    setSpecificDetail(matchedData);}),[]);
+  
+
 
     return (
         <div style={{marginBottom: "15%"}}>
