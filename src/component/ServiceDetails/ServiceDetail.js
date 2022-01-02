@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 
 const ServiceDetail = () => { 
-    const {id} = useParams()
+    const {id} = useParams();
     
     const [specificDetail, setSpecificDetail] = useState({});
 
