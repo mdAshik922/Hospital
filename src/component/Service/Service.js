@@ -9,6 +9,7 @@ const Service = () => {
        .then(res =>res.json())
        .then(data => setUsers(data))
     },[]);
+    
     return (
         <div className="service-cart-style">
             {
