@@ -15,8 +15,7 @@ const Service = () => {
                 users.map(user => <ServiceCart
                 key={user.id}
                 service={user}
-                ></ServiceCart>)
-            }
+                ></ServiceCart>)}
         </div>
     );
 };
