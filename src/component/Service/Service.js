@@ -3,7 +3,7 @@ import ServiceCart from './ServiceCart';
 import './Service.css';
 
 const Service = () => {
-    const [users, setUsers] = useState([]);
+    const [ users, setUsers ] = useState([]);
 
     useEffect(() =>{
        fetch('./FakeData.json')
