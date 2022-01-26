@@ -14,9 +14,9 @@ const Service = () => {
     return (
         <div className="service-cart-style">
             {
-                users.map(user => <ServiceCart
-                key={user.id}
-                service={user}
+                users.map( user => <ServiceCart
+                key = { user.id }
+                service = { user }
                 ></ServiceCart>)}
         </div>
     );
