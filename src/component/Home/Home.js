@@ -3,7 +3,6 @@ import { Carousel } from 'react-bootstrap';
 import Doctor from './Doctor.jpg';
 import happyDoctor from'./img/happy-doctor.jpg';
 import thankDoctor from'./img/thank.jpg';
-import Shake from 'react-reveal/Shake';
 import Old from './spatial-doctor/old-doctor.jpg';
 import Dental from './spatial-doctor/dental.jpg';
 import Women from './spatial-doctor/women.jpg';
@@ -25,10 +24,10 @@ const Home = () => {
       alt="Second slide"
     />
     <Carousel.Caption>
-    <Shake>
+   
       <h5 style={{color: 'blue', fontSize: 'xx-large', marginLeft: '170px'}}>Healthy Food Helthy Life</h5>
       <p style={{color: 'blue', fontSize: 'large', marginLeft: '200px'}}><strong>If you are sick, you should seek medical help</strong></p>
-      </Shake>
+      
   </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -38,10 +37,10 @@ const Home = () => {
       alt="Third slide"
     />
     <Carousel.Caption>
-    <Shake>
+    
       <h5 style={{color: 'blue', fontSize: 'xx-large'}}>healthy food healthy life</h5>
       <p style={{color: 'blue', fontSize: 'large'}}><strong>If you are sick, you should seek medical help.</strong>&#128151;</p>
-      </Shake>
+     
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
