@@ -11,7 +11,6 @@ const ServiceCart = ({service}) => {
             <div className="container-style" >
            <img className="img-style" src={picture} alt="health"/>
            <h2>Name:{name}</h2>
-           
             <p><strong>{about.slice(0, 112)}<Link to={`/ServiceDetail/${id}`}>Learn-more</Link></strong></p>
             </div>
         </div>
