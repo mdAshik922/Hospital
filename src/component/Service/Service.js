@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCart from './ServiceCart';
 import './Service.css';
+
 const Service = () => {
     const [users, setUsers] = useState([]);
 
@@ -9,7 +10,7 @@ const Service = () => {
        .then(res =>res.json())
        .then(data => setUsers(data))
     },[]);
-    
+
     return (
         <div className="service-cart-style">
             {
